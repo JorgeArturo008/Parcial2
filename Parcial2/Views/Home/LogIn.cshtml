@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Login Page";
+}
+
+<center>
+    <img src="https://png.pngtree.com/png-vector/20220619/ourmid/pngtree-secure-user-login-password-protected-png-image_5131485.png"  
+     width="320"
+     height="320">>
+    
+</center>
+
+<div class="container" style="width:50%;margin-top:10%">
+    <div class="card" style="border-radius: 15px;">
+        <div class="card-body">
+            <form method="post" action="@Url.Action("LoginUser", "Login")">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" name="email" placeholder="name@example.com" value="jorge@gmail.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" name="password" placeholder="Password" value="bE3XiWw=">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <hr />
+                <button type="submit" class="btn btn-primary" style="float:right">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

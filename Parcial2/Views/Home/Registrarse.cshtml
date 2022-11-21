@@ -1,0 +1,33 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+	<div class="container">
+		Create user
+		<hr />
+		<form asp-action="SaveUser" asp-controller="Home" method="POST">
+			<div class="form-floating mb-3">
+				<input name="txtName"  type="text" class="form-control" id="txtName" placeholder="name" required>
+				<label for="txtName">Name</label>
+			</div>
+			<div class="form-floating mb-3">
+				<input name="txtLastName" type="text" class="form-control" id="txtLastName" placeholder="txtLastName" required>
+				<label for="txtLastName">Last Name</label>
+			</div>
+			<div class="form-floating mb-3">
+				<input name="txtEmail" type="email" class="form-control" id="txtEmail" placeholder="txtEmail" required>
+				<label for="txtEmail">Email</label>
+			</div>
+			<div class="form-floating mb-3">
+				<input name="txtPhone" type="password" class="form-control" id="txtPhone"  placeholder="txtPhone" required>
+				<label for="txtPhone">Phone</label>
+			</div>
+			<div class="form-floating mb-3">
+				<input name="txtAddres" type="text" class="form-control" id="txtAddres" placeholder="txtAddres" required>
+				<label for="txtAddres">Addres</label>
+			</div>
+			<button class="btn btn-primary">Save</button>
+		</form>
+	</div>
+</div>

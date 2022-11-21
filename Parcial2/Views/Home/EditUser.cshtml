@@ -1,0 +1,82 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+	<div class="container">
+		Editar	Contraseña
+		<hr />
+		<form asp-action="UpdateUser" asp-controller="Home" method="POST">
+			<div class="form-floating mb-3">
+				<input value="@ViewBag.User.Id" disabled name="txtId" type="text" class="form-control" id="txtId" placeholder="name" required readonly>
+				<label for="txtName">Id</label>
+			</div>
+			<div class="form-floating mb-3">
+				<input value="@ViewBag.User.Name" disabled name="txtName" type="text" class="form-control" id="txtName" placeholder="name" required>
+				<label for="txtName">Name</label>
+			</div>
+			<div class="form-floating mb-3">
+				<input value="@ViewBag.User.LastName" disabled name="txtLastName" type="text" class="form-control" id="txtLastName" placeholder="txtLastName" required>
+				<label for="txtLastName">Last Name</label>
+			</div>
+			<div class="form-floating mb-3">
+				<input value="@ViewBag.User.Email" name="txtEmail" type="email" class="form-control" id="txtEmail" placeholder="txtEmail" required>
+				<label for="txtEmail">Email</label>
+			</div>
+			<div class="form-floating mb-3">
+				<input value="@ViewBag.User.Phone" name="txtPhone" type="number" class="form-control" id="txtPhone" placeholder="txtPhone" required>
+				<label for="txtPhone">Phone</label>
+			</div>
+			<div class="form-floating mb-3">
+				<input value="@ViewBag.User.Addres" name="txtAddres" disabled type="text" class="form-control" id="txtAddres" placeholder="txtAddres" required>
+				<label for="txtAddres">Addres</label>
+			</div>
+			<div class="form-floating mb-3" style="float:right">
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalUpdate">
+					Update
+				</button>
+				<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+					Delete
+				</button>
+			</div>
+
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5" id="exampleModalLabel">Delete user</h1>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							You really want to delete this user?
+						</div>
+						<div class="modal-footer">
+							<a href="DeleteUser?id=@ViewBag.User.Id">
+								<input class="btn btn-danger" type="button" value="Delete?" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Modal Update -->
+			<div class="modal fade" id="exampleModalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5" id="exampleModalLabel">Edit user</h1>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							You really want to edit this user?
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary">Update</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

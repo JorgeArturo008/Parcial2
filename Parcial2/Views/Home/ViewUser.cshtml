@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+ 
+<div class="text-center">
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Addres</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var @item in @ViewBag.UserList)
+                {
+                    <tr onclick="window.location.href='EditUser?id=@item.Id'">
+                        <th scope="row">@item.Id</th>
+                        <td>@item.Name</td>
+                        <td>@item.LastName</td>
+                        <td>@item.Email</td>
+                        <td>@item.Phone</td>                      
+                        <td>@item.Addres</td>                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+        
+    </div>
+</div>
